@@ -13,6 +13,7 @@ export default function BlogArticle(props) {
                 'Body is null'
             }
             <p>{props.pageContext.body}</p>
+            <img src={props.pageContext.image.fluid.src} alt={props.pageContext.image.alt} />
         </>
     );
 }

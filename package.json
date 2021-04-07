@@ -7,7 +7,7 @@
   "dependencies": {
     "gatsby": "^2.26.1",
     "gatsby-plugin-sharp": "^2.8.0",
-    "gatsby-source-datocms": "2.5.7",
+    "gatsby-source-datocms": "2.6.10",
     "gatsby-source-filesystem": "^2.5.0",
     "gatsby-transformer-sharp": "^2.6.0",
     "prop-types": "^15.7.2",

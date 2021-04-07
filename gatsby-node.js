@@ -11,6 +11,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                     slug
                     title
                     body
+                    image {
+                        alt
+                        fluid(maxWidth: 450, imgixParams: { fm: "jpg", auto: "compress" }) {
+                            base64
+                            aspectRatio
+                            src
+                            srcSet
+                            sizes
+                        }
+                    }
                 }
             }
         }
@@ -22,11 +32,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     blogArticleNodes.forEach(blogArticleNode => {
         reporter.info(`Creating page for blogArticleNode ${JSON.stringify(blogArticleNode, null, 2)}`);
         actions.createPage({
-            path: `/blogs/${blogArticleNode.slug}`,
+            path: `/${blogArticleNode.slug}`,
             component: path.resolve(`./src/templates/blogArticle.jsx`),
             context: {
                 title: blogArticleNode.title,
                 body: blogArticleNode.body,
+                image: blogArticleNode.image,
             }
         });
     });
