@@ -21,6 +21,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                             sizes
                         }
                     }
+                    image2 {
+                        alt
+                        fluid(maxWidth: 450, imgixParams: { fm: "jpg", auto: "compress" }) {
+                            base64
+                            aspectRatio
+                            src
+                            srcSet
+                            sizes
+                        }
+                    }
                 }
             }
         }
@@ -38,6 +48,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 title: blogArticleNode.title,
                 body: blogArticleNode.body,
                 image: blogArticleNode.image,
+                image2: blogArticleNode.image2,
             }
         });
     });

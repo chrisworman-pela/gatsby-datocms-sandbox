@@ -8,12 +8,12 @@ export default function BlogArticle(props) {
                 'Title is null'
             }
             <h1>{props.pageContext.title}</h1>
-            {
-                props.pageContext.body === null &&
-                'Body is null'
-            }
-            <p>{props.pageContext.body}</p>
+            <h3>Has only default locale alt text set</h3>
+            <p>Alt: {props.pageContext.image.alt}</p>
             <img src={props.pageContext.image.fluid.src} alt={props.pageContext.image.alt} />
+            <h3>Has all locale alt texts set</h3>
+            <p>Alt: {props.pageContext.image2.alt}</p>
+            <img src={props.pageContext.image2.fluid.src} alt={props.pageContext.image2.alt} />
         </>
     );
 }
