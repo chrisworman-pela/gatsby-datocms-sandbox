@@ -13,7 +13,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                     body
                     image {
                         alt
-                        gatsbyImageData(layout: CONSTRAINED, width: 400, placeholder: TRACED_SVG)
+                        gatsbyImageData(layout: FIXED, width: 400, placeholder: TRACED_SVG)
                     }
                 }
             }
