@@ -1,18 +1,13 @@
+import { GatsbyImage } from "gatsby-plugin-image";
 import React from "react";
 
 export default function BlogArticle(props) {
+    const { image, title, body } = props.pageContext;
     return (
         <>
-            {
-                props.pageContext.title === null &&
-                'Title is null'
-            }
-            <h1>{props.pageContext.title}</h1>
-            {
-                props.pageContext.body === null &&
-                'Body is null'
-            }
-            <p>{props.pageContext.body}</p>
+            <GatsbyImage image={image.gatsbyImageData} alt={image.alt} />
+            <h1>{title}</h1>
+            <p>{body}</p>
         </>
     );
 }

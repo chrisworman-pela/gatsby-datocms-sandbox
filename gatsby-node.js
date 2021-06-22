@@ -11,6 +11,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                     slug
                     title
                     body
+                    image {
+                        alt
+                        gatsbyImageData(layout: CONSTRAINED, width: 400, placeholder: TRACED_SVG)
+                    }
                 }
             }
         }
@@ -27,6 +31,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             context: {
                 title: blogArticleNode.title,
                 body: blogArticleNode.body,
+                image: blogArticleNode.image,
             }
         });
     });
